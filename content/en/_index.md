@@ -12,4 +12,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 --- Lorem Ipsum
 
-{{< network-graph title="Grafik jaringan pada situs Bahasa Inggris" data="https://foxihd.github.io/hugo-brewm/en/index.json" height="400px" >}}
+{{< network-graph title="Grafik jaringan pada situs Bahasa Inggris" data="https://jerson-cortes.github.io/en/index.json" height="400px" >}}
