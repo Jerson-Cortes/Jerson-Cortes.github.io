@@ -1,135 +1,63 @@
 import * as THREE from 'three';
 
 import Stats from 'three/addons/libs/stats.module.js';
-import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-let camera, scene, renderer, controls, stats;
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-let mesh;
-const amount = parseInt( window.location.search.slice( 1 ) ) || 10;
-const count = Math.pow( amount, 3 );
+let stats = new Stats();
+document.body.appendChild( stats.dom );
 
-const raycaster = new THREE.Raycaster();
-const mouse = new THREE.Vector2( 1, 1 );
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight );
+renderer.setAnimationLoop( animate );
+document.body.appendChild( renderer.domElement );
 
-const color = new THREE.Color();
-const white = new THREE.Color().setHex( 0xffffff );
+const controls = new OrbitControls( camera, renderer.domElement );
 
-init();
+// Creates a 12 by 12 grid helper.
+const gridHelper = new THREE.GridHelper(12, 12);
+scene.add(gridHelper);
 
-function init() {
+// Creates an axes helper with an axis length of 4.
+const axesHelper = new THREE.AxesHelper(4);
+scene.add(axesHelper);
 
-  camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 0.1, 100 );
-  camera.position.set( amount, amount, amount );
-  camera.lookAt( 0, 0, 0 );
+const geometry = new THREE.SphereGeometry( 1, 32, 16 );
+const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+const mesh = new THREE.InstancedMesh(geometry, material, 10000);
 
-  scene = new THREE.Scene();
+let count = 10000000;
 
-  const light = new THREE.HemisphereLight( 0xffffff, 0x888888, 3 );
-  light.position.set( 0, 1, 0 );
-  scene.add( light );
+const dummy = new THREE.Object3D();
+for (let i = 0; i < count; i++) {
+  dummy.position.x = Math.random() * 1000 - 1000;
+  dummy.position.y = Math.random() * 1000 - 1000;
+  dummy.position.z = Math.random() * 1000 - 1000;
 
-  const geometry = new THREE.IcosahedronGeometry( 0.5, 3 );
-  const material = new THREE.MeshPhongMaterial( { color: 0xffffff } );
+  dummy.scale.x = dummy.scale.y = dummy.scale.z = Math.random();
 
-  mesh = new THREE.InstancedMesh( geometry, material, count );
-
-  let i = 0;
-  const offset = ( amount - 1 ) / 2;
-
-  const matrix = new THREE.Matrix4();
-
-  for ( let x = 0; x < amount; x ++ ) {
-
-    for ( let y = 0; y < amount; y ++ ) {
-
-      for ( let z = 0; z < amount; z ++ ) {
-
-        matrix.setPosition( offset - x, offset - y, offset - z );
-
-        mesh.setMatrixAt( i, matrix );
-        mesh.setColorAt( i, color );
-
-        i ++;
-
-      }
-
-    }
-
-  }
-
-  scene.add( mesh );
-
-  //
-
-  const gui = new GUI();
-  gui.add( mesh, 'count', 0, count );
-
-  renderer = new THREE.WebGLRenderer( { antialias: true } );
-  renderer.setPixelRatio( window.devicePixelRatio );
-  renderer.setSize( window.innerWidth, window.innerHeight );
-  renderer.setAnimationLoop( animate );
-  document.body.appendChild( renderer.domElement );
-
-  controls = new OrbitControls( camera, renderer.domElement );
-  controls.enableDamping = true;
-  controls.enableZoom = false;
-  controls.enablePan = false;
-
-  stats = new Stats();
-  document.body.appendChild( stats.dom );
-
-  window.addEventListener( 'resize', onWindowResize );
-  document.addEventListener( 'mousemove', onMouseMove );
-
+  dummy.updateMatrix();
+  mesh.setMatrixAt(i, dummy.matrix);
 }
 
-function onWindowResize() {
+scene.add( mesh );
 
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-
-  renderer.setSize( window.innerWidth, window.innerHeight );
-
-}
-
-function onMouseMove( event ) {
-
-  event.preventDefault();
-
-  mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-  mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-
-}
+camera.position.x = 500;
+camera.position.z = 500;
+controls.update();
 
 function animate() {
 
   controls.update();
-
-  raycaster.setFromCamera( mouse, camera );
-
-  const intersection = raycaster.intersectObject( mesh );
-
-  if ( intersection.length > 0 ) {
-
-    const instanceId = intersection[ 0 ].instanceId;
-
-    mesh.getColorAt( instanceId, color );
-
-    if ( color.equals( white ) ) {
-
-      mesh.setColorAt( instanceId, color.setHex( Math.random() * 0xffffff ) );
-
-      mesh.instanceColor.needsUpdate = true;
-
-    }
-
-  }
-
   renderer.render( scene, camera );
 
   stats.update();
-
 }
 
+window.addEventListener('resize', function() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
