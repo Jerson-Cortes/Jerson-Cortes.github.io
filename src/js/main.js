@@ -17,21 +17,25 @@ document.body.appendChild( renderer.domElement );
 const controls = new OrbitControls( camera, renderer.domElement );
 
 // Creates a 12 by 12 grid helper.
-const gridHelper = new THREE.GridHelper(12, 12);
-scene.add(gridHelper);
+//const gridHelper = new THREE.GridHelper(12, 12);
+//scene.add(gridHelper);
 
 // Creates an axes helper with an axis length of 4.
-const axesHelper = new THREE.AxesHelper(4);
-scene.add(axesHelper);
+//const axesHelper = new THREE.AxesHelper(4);
+//scene.add(axesHelper);
 
-const geometry = new THREE.SphereGeometry( 1, 32, 16 );
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const mesh = new THREE.InstancedMesh(geometry, material, 10000);
+let obj = {
+  count: 10000000,
+};
 
-let count = 10000000;
+const material = new THREE.MeshBasicMaterial( { color: 0xffff00} );
+const geometry = new THREE.SphereGeometry( 1, 2, 1 );
+
+const lod = new THREE.LOD();
+const mesh = new THREE.InstancedMesh(geometry, material, obj.count);
 
 const dummy = new THREE.Object3D();
-for (let i = 0; i < count; i++) {
+for (let i = 0; i < obj.count; i++) {
   dummy.position.x = Math.random() * 1000 - 1000;
   dummy.position.y = Math.random() * 1000 - 1000;
   dummy.position.z = Math.random() * 1000 - 1000;
@@ -39,6 +43,7 @@ for (let i = 0; i < count; i++) {
   dummy.scale.x = dummy.scale.y = dummy.scale.z = Math.random();
 
   dummy.updateMatrix();
+  mesh.setColorAt(i, new THREE.Color(Math.random() * 0xFFFFFF));
   mesh.setMatrixAt(i, dummy.matrix);
 }
 

@@ -20,5 +20,8 @@
   "homepage": "https://github.com/Jerson-Cortes/Jerson-Cortes.github.io#readme",
   "dependencies": {
     "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "lil-gui": "^0.21.0"
   }
 }
