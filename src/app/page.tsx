@@ -5,46 +5,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+        <h1 className={styles.primary}>Jerson Cortes P.</h1>
       </main>
       <footer className={styles.footer}>
         <a
@@ -55,7 +16,7 @@ export default function Home() {
           <Image
             aria-hidden
             src="/linkedin.svg"
-            alt="File icon"
+            alt="LinkedIn"
             width={16}
             height={16}
           />
@@ -69,7 +30,7 @@ export default function Home() {
           <Image
             aria-hidden
             src="/email.svg"
-            alt="Window icon"
+            alt="Email"
             width={16}
             height={16}
           />
@@ -83,7 +44,7 @@ export default function Home() {
           <Image
             aria-hidden
             src="/github.svg"
-            alt="Globe icon"
+            alt="GitHub"
             width={16}
             height={16}
           />
