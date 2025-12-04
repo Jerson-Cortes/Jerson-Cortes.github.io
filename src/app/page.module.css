@@ -81,6 +81,10 @@
   font-weight: 500;
 }
 
+h1.primary {
+  font-family: Gambarino-Regular;
+}
+
 a.primary {
   background: var(--foreground);
   color: var(--background);
