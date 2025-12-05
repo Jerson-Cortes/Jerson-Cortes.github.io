@@ -82,7 +82,11 @@
 }
 
 h1.primary {
-  font-family: Gambarino-Regular;
+  font-family: var(--font-gambarino-sans);
+}
+
+h2.primary {
+  font-family: var(--font-gambarino-sans);
 }
 
 a.primary {

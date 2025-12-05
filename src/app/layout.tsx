@@ -2,10 +2,16 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from 'next/font/local'
+import ThemeProvider from "@/components/theme";
 
 const switzer = localFont({
-  src: '../../public/fonts/switzer/Switzer-Regular.woff2',
+  src: '../../public/fonts/switzer/Switzer-Light.woff2',
   variable: "--font-geist-sans",
+})
+
+const gambarino = localFont({
+  src: '../../public/fonts/gambarino/Gambarino-Regular.woff2',
+  variable: "--font-gambarino-sans",
 })
 
 const geistSans = Geist({
@@ -26,13 +32,15 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
+    children: React.ReactNode;
+  }>) {
   return (
     <html lang="en">
-      <body className={`${switzer.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
+      <ThemeProvider>
+        <body className={`${switzer.variable} ${geistMono.variable} ${gambarino.variable}`}>
+          {children}
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

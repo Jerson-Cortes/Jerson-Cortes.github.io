@@ -1,11 +1,35 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Heading from "@/components/heading";
+import ThemeController from "@/components/theme-controller";
+import Column from "@/components/column";
+import Section from "@/components/section";
+import Text from "@/components/text";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} bg-surfacecontainerhighest`}>
       <main className={styles.main}>
-        <h1 className={styles.primary}>Jerson Cortes P.</h1>
+        <ThemeController />
+        <Section padding="none">
+          <div></div>
+        </Section>
+        <Column
+          alignItems="center"
+          justifyContent="start"
+          gap="md" 
+        >
+          <Heading 
+            tag="h1" 
+            fontClass="display2-bold"
+            className={styles.primary}
+          >
+            Jerson Cortes P.
+          </Heading>
+          <Text fontClass="body" tag="footer" color="onbackground">
+            Welcome to my GitHub Page!
+          </Text>
+        </Column>
       </main>
       <footer className={styles.footer}>
         <a
