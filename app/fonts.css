@@ -1,0 +1,66 @@
+/**
+* @license
+*
+* Font Family: Synonym
+* Designed by: Hugo Dumont
+* URL: https://www.fontshare.com/fonts/synonym
+* © 2025 Indian Type Foundry
+*
+* Synonym Extralight 
+* Synonym Light 
+* Synonym Regular 
+* Synonym Medium 
+* Synonym Semibold 
+* Synonym Bold 
+* Synonym Variable (Variable font)
+
+*
+*/
+@font-face {
+  font-family: 'Synonym-Regular';
+  src: url('../public/fonts/Synonym-Regular.woff2') format('woff2'),
+       url('../public/fonts/Synonym-Regular.woff') format('woff'),
+       url('../public/fonts/Synonym-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* @license
+*
+* Font Family: Amulya
+* Designed by: Joana Correia
+* URL: https://www.fontshare.com/fonts/amulya
+* © 2025 Indian Type Foundry
+*
+* Amulya Light 
+* Amulya LightItalic 
+* Amulya Regular 
+* Amulya Italic 
+* Amulya Medium 
+* Amulya MediumItalic 
+* Amulya Bold 
+* Amulya BoldItalic 
+* Amulya Variable (Variable font)
+* Amulya VariableItalic (Variable font)
+
+*
+*/
+@font-face {
+  font-family: 'Amulya-Bold';
+  src: url('../public/fonts/Amulya-Bold.woff2') format('woff2'),
+       url('../public/fonts/Amulya-Bold.woff') format('woff'),
+       url('../public/fonts/Amulya-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Amulya-BoldItalic';
+  src: url('../public/fonts/Amulya-BoldItalic.woff2') format('woff2'),
+       url('../public/fonts/Amulya-BoldItalic.woff') format('woff'),
+       url('../public/fonts/Amulya-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
