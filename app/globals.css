@@ -5,13 +5,13 @@
   --background: #ffffff;
   --foreground: #000000;
   --red: #e61616;
+  --font-bold: Amulya-Bold;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-bold: var(--font-bold)
 }
 
 @media (prefers-color-scheme: dark) {
@@ -41,11 +41,6 @@ h3 {
 
 a {
   font-family: Amulya-Bold;
-}
-
-p {
-  font-family: Amulya-Bold;
-  color: white;
 }
 
 .writing-vertical-lr {
