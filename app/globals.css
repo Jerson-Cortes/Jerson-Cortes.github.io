@@ -4,6 +4,7 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
+  --red: #e61616;
 }
 
 @theme inline {
@@ -32,4 +33,21 @@ h1 {
 
 h2 {
   font-family: Amulya-Bold;
+}
+
+h3 {
+  font-family: Amulya-BoldItalic;
+}
+
+a {
+  font-family: Amulya-Bold;
+}
+
+p {
+  font-family: Amulya-Bold;
+  color: white;
+}
+
+.writing-vertical-lr {
+  writing-mode: vertical-lr;
 }

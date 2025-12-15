@@ -1,12 +1,28 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center font-sans dark:bg-white">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 dark:bg-white sm:items-start">
-        <h1>JERSON CORTES</h1>
-        <h2>[ABOUT ME]</h2>
-        <p>Testing</p>
+      <main className="flex min-h-screen w-full flex-col justify-between p-4 dark:bg-white sm:items-start">
+        <div className="flex flex-col">
+          <h1 className="text-(--red) text-7xl order-0">JERSON</h1>
+          <h1 className="text-(--red) text-7xl order-2 absolute top-25 right-4">CORTES</h1>
+          <h3 className="order-1 writing-vertical-lr py-4">努力は裏切らない</h3>
+          <h3 className="order-3 absolute top-41 right-15">SOFTWARE DEVELOPER</h3>
+          <div className="flex flex-col order-4 py-32 right-5 ml-auto space-y-8">
+            <h2 className="text-4xl ml-auto">[ABOUT ME]</h2>
+            <h2 className="text-4xl ml-auto">[SKILLS]</h2>
+            <h2 className="text-4xl ml-auto">[CONTACT]</h2>
+          </div>
+        </div>
+        <footer className="flex justify-between">
+          <div className="">
+            <p>MEXICO</p>
+          </div>
+          <div className="">
+            <a href="">GitHub</a>
+            <a href="">LinkedIn</a>
+            <a href="">Email</a>
+          </div>
+        </footer>
       </main>
     </div>
   )
