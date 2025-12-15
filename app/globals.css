@@ -6,6 +6,7 @@
   --foreground: #000000;
   --red: #e61616;
   --font-bold: Amulya-Bold;
+  --font-synonym: Synonym-Regular;
 }
 
 @theme inline {
@@ -37,10 +38,6 @@ h2 {
 
 h3 {
   font-family: Amulya-BoldItalic;
-}
-
-a {
-  font-family: Amulya-Bold;
 }
 
 .writing-vertical-lr {
