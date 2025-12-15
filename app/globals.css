@@ -51,3 +51,7 @@ p {
 .writing-vertical-lr {
   writing-mode: vertical-lr;
 }
+
+.japanese {
+  font-family: MochiyPopPOn-Regular;
+}
