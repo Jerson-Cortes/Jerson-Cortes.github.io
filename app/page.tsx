@@ -1,6 +1,7 @@
 import Hero from "./sections/hero"
 import Footer from "./sections/footer"
 import AboutMe from "./sections/about_me"
+import Skills from "./sections/skills"
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <main className="flex min-h-screen w-full flex-col justify-between p-5 dark:bg-white sm:items-start">
         <Hero/>
         <AboutMe/>
+        <Skills/>
         <Footer/>
       </main>
     </div>
