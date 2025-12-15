@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="flex fixed inset-x-0 bottom-0 p-5">
+    <footer className="flex fixed inset-x-0 bottom-0 p-5 bg-white">
       <p className="text-lg bg-(--red)">MEXICO</p>
       <div className="ml-auto space-x-3 text-lg">
         <a href="https://github.com/Jerson-Cortes" target="_blank" rel="noopener noreferrer">GitHub</a>
