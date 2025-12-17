@@ -1,17 +1,15 @@
-@import url('fonts.css');
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #000000;
   --red: #e61616;
-  --font-bold: Amulya-Bold;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-bold: var(--font-bold)
+  --font-bold: var(--font-amulya-bold);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,19 +22,19 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Synonym-Regular;
+  font-family: var(--font-synonym);
 }
 
 h1 {
-  font-family: Amulya-BoldItalic;
+  font-family: var(--font-amulya-bolditalic);
 }
 
 h2 {
-  font-family: Amulya-Bold;
+  font-family: var(--font-amulya-bold);
 }
 
 h3 {
-  font-family: Amulya-BoldItalic;
+  font-family: var(--font-amulya-bolditalic);
 }
 
 .writing-vertical-lr {
@@ -44,5 +42,9 @@ h3 {
 }
 
 .japanese {
-  font-family: MochiyPopPOn-Regular;
+  font-family: var(--font-mochiyPopPOn);
+}
+
+.amulya-bolditalic {
+  font-family: var(--font-amulya-bolditalic);
 }

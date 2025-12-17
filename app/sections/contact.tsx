@@ -1,4 +1,3 @@
-
 export default function Contact() {
   return (
     <div className="flex flex-col pt-10 pb-15 relative " id="AboutMe">
@@ -45,7 +44,7 @@ export default function Contact() {
         </div>
         <input 
           type="submit" 
-          className={`bg-(--red) text-white ml-auto my-4 `} 
+          className={`bg-(--red) amulya-bolditalic text-white  ml-auto my-4 `} 
           value="SEND MESSAGE"
         />
       </form>
