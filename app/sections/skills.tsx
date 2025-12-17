@@ -1,6 +1,6 @@
 export default function Skills() {
   return (
-    <div className="flex flex-col pt-10 pb-15 relative " id="AboutMe">
+    <div className="flex flex-col pt-10 pb-5 relative " id="AboutMe">
       <h2 className="text-(--red) text-4xl pb-8">[SKILLS]</h2>
       <div className="pr-10">
         <div className="flex items-center">
@@ -24,6 +24,10 @@ export default function Skills() {
         </div>
         <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=354BC02F2DF055273A52C0404AD32FA28ED3307D0B88D73B994B058DA2EF4893" rel="noopener noreferrer">Oracle Cloud Infrastructure Developer Professional 🔗</a> • <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=35A757628931724C12BC1C4BBBF99F20A56F8B3FC7CECBBECE88B60C980A8AB7" rel="noopener noreferrer">Oracle Cloud Infrastructure Foundations Associate 🔗</a> 
       </div>
+        <a
+          href="https://github.com/Jerson-Cortes?tab=repositories"
+          className={`bg-(--red) amulya-bolditalic text-white text-lg text-center my-8 p-0.5 underline`} 
+        >CHECK OUT MY CURRENT PROJECTS</a>
     </div>
   )
 }
