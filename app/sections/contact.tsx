@@ -44,7 +44,7 @@ export default function Contact() {
         </div>
         <input 
           type="submit" 
-          className={`bg-(--red) amulya-bolditalic text-white  ml-auto my-4 `} 
+          className={`bg-(--red) amulya-bolditalic text-white text-lg ml-auto my-4 p-0.5`} 
           value="SEND MESSAGE"
         />
       </form>
