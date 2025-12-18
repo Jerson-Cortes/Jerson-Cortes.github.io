@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
     <section id="Contact">
-      <div className="flex flex-col pt-10 pb-15 relative " id="AboutMe">
+      <div className="flex flex-col pt-10 pb-15 relative " id="Contact">
         <h2 className="text-(--red) text-4xl pb-6">[CONTACT]</h2>
         <p>I’m always open to opportunities, be it freelance, contract, or cool projects so reach out!</p>
         <form className="flex flex-col pt-6 pb-16">

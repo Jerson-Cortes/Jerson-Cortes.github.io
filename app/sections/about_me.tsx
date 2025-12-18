@@ -1,7 +1,7 @@
 export default function AboutMe() {
   return (
     <section id="AboutMe">
-      <div className="flex flex-col pt-10 relative" id="AboutMe">
+      <div className="flex flex-col mt-18 relative" id="AboutMe">
         <h2 className="text-(--red) text-4xl">[ABOUT ME]</h2>
         <p className="indent-8 py-8">"Creating tools that deliver rich, user‑friendly experiences while safeguarding privacy."</p>
 

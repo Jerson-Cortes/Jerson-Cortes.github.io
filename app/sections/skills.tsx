@@ -1,7 +1,7 @@
 export default function Skills() {
   return (
     <section id="Skills">
-      <div className="flex flex-col pt-10 pb-5 relative " id="AboutMe">
+      <div className="flex flex-col pt-10 pb-5 relative" id="Skills">
         <h2 className="text-(--red) text-4xl pb-8">[SKILLS]</h2>
         <div className="pr-10">
           <div className="flex items-center">
