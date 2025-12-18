@@ -48,3 +48,21 @@ h3 {
 .amulya-bolditalic {
   font-family: var(--font-amulya-bolditalic);
 }
+
+.burger-svg line {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  transition: transform 0.35s ease,
+              opacity   0.35s ease;
+}
+.burger-svg.open #topLine {
+  transform: translateY(50px) rotate(45deg);
+}
+
+.burger-svg.open #middleLine {
+  opacity: 0;
+}
+
+.burger-svg.open #bottomLine {
+  transform: translateY(-50px) rotate(-45deg);
+}
