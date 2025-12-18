@@ -30,7 +30,7 @@ export default function NavBar() {
         <p className="text-2xl amulya-bolditalic text-(--red) pl-2.5">J.</p>
         <div className="flex ml-auto text-lg justify-center items-center">
           <div className="mr-5">
-            <a className="bg-(--red) amulya-bolditalic text-white text-lg text-center py-0.5 px-3" href="" target="_blank" rel="noopener noreferrer">REACH OUT</a>
+            <a className="bg-(--red) amulya-bolditalic text-white text-lg text-center py-0.5 px-3" href="#Contact">REACH OUT</a>
           </div>
           <HamburgerMenu isOpen={isMenuOpen} onToggleAction={toggleMenu} />
         </div>
