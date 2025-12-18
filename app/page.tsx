@@ -11,6 +11,7 @@ export default function Home() {
       <NavBar />
       <main className="flex min-h-screen w-full flex-col justify-between p-5 dark:bg-white sm:items-start">
         <Hero />
+        <div className="h-4"> </div>
         <AboutMe />
         <Skills />
         <Contact />
