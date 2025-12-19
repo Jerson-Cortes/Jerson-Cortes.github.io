@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+@layer base {
+  html {
+    font-size: 100%;
+  }
+
+  @media (min-width: 1920px) {
+    html {
+      font-size: 150%;
+    }
+  }
+
+  @media (min-width: 2560px) {
+    html {
+      font-size: 200%;
+    }
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #000000;
@@ -53,8 +71,9 @@ h3 {
   transform-box: fill-box;
   transform-origin: 50% 50%;
   transition: transform 0.35s ease,
-              opacity   0.35s ease;
+    opacity 0.35s ease;
 }
+
 .burger-svg.open #topLine {
   transform: translateY(50px) rotate(45deg);
 }
