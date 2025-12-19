@@ -38,9 +38,9 @@ export default function Sidebar({ isOpen, onToggleAction }: SidePanelProps) {
   return (
     <nav aria-label="Main site navigation" className={`fixed inset-y-0 right-0 z-20 bg-white w-full mt-16 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
       <ul className="flex flex-col items-end font-bold text-4xl mr-5 mt-8">
-        <li className="mb-6"><a onClick={onToggleAction} href="#AboutMe">[ABOUT ME]</a></li>
-        <li className="mb-6"><a onClick={onToggleAction} href="#Skills">[SKILLS]</a></li>
-        <li className="mb-6"><a onClick={onToggleAction} href="#Contact">[CONTACT]</a></li>
+        <li className="mb-6 hover:text-(--red)"><a onClick={onToggleAction} href="#AboutMe">[ABOUT ME]</a></li>
+        <li className="mb-6 hover:text-(--red)"><a onClick={onToggleAction} href="#Skills">[SKILLS]</a></li>
+        <li className="mb-6 hover:text-(--red)"><a onClick={onToggleAction} href="#Contact">[CONTACT]</a></li>
       </ul>
     </nav>
   )
