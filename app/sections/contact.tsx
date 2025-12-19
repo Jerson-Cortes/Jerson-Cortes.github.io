@@ -1,10 +1,10 @@
 export default function Contact() {
   return (
     <section id="Contact" className="w-full md:h-[calc(100vh-6rem)]">
-      <div className="flex flex-col pt-10 pb-15 relative" id="Contact">
+      <div className="flex flex-col pt-10 pb-15 relative 2xl:px-80" id="Contact">
         <h2 className="text-(--red) text-4xl pb-6 md:ml-20">[CONTACT]</h2>
         <p className="md:ml-20 md:w-100">I’m always open to opportunities, be it freelance, contract, or cool projects so reach out!</p>
-        <form className="flex flex-col pt-6 pb-16 md:mx-20 md:absolute md:right-0 md:pt-15 md:w-110">
+        <form className="flex flex-col pt-6 pb-16 md:mx-20 md:absolute md:right-0 md:pt-15 md:w-110 2xl:mx-100">
           <div className="flex flex-row justify-between gap-2 mb-4">
             <div className="flex flex-col flex-1">
               <label className="font-bold">Name</label>
