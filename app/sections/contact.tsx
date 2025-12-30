@@ -73,6 +73,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                minLength={2}
                 className="w-full border border-black focus:outline-none"
               />
             </div>
@@ -80,7 +81,7 @@ export default function Contact() {
               <label className="font-bold">Email</label>
               <input
                 id="email"
-                type="text"
+                type="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -96,6 +97,7 @@ export default function Contact() {
               value={formData.subject}
               onChange={handleChange}
               required
+              minLength={5}
               className="border border-black focus:outline-none"
             />
           </div>
@@ -106,6 +108,8 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
               required
+              minLength={20}
+              maxLength={2000}
               className="h-32 border border-black focus:outline-none resize-none"
             >
             </textarea>
