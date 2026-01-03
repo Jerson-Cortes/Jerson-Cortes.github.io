@@ -74,6 +74,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 minLength={2}
+                maxLength={50}
                 className="w-full border border-black focus:outline-none"
               />
             </div>
@@ -98,6 +99,7 @@ export default function Contact() {
               onChange={handleChange}
               required
               minLength={5}
+              maxLength={50}
               className="border border-black focus:outline-none"
             />
           </div>
