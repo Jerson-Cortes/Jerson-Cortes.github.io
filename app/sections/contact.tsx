@@ -8,6 +8,10 @@ export default function Contact() {
   const emptyForm = { name: '', email: '', subject: '', message: '' };
   const [formData, setFormData] = useState(emptyForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const apiUrl = process.env.API_URL;
+  if (!apiUrl) {
+    throw new Error('API_URL environment variable is missing');
+  }
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -21,7 +25,7 @@ export default function Contact() {
     setIsSubmitting(true);
 
     const sendForm = async () => {
-      const response = await fetch("https://jersoncortes.com/api/send", {
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
