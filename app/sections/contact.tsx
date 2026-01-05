@@ -1,19 +1,13 @@
 'use client';
 
-import { useState, useRef } from "react";
+import { useState } from "react";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 
 export default function Contact() {
 
-  const firstInputRef = useRef<HTMLInputElement>(null);
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
-  });
-
   const emptyForm = { name: '', email: '', subject: '', message: '' };
+  const [formData, setFormData] = useState(emptyForm);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -24,39 +18,54 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    try {
+    const sendForm = async () => {
       const response = await fetch("https://jersoncortes.com/api/send", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
         const err = await response.json();
         throw new Error(err.error ?? `Status ${response.status}`);
       }
-
-      const result = await response.json();
-
-      console.log("Success:", result);
-
-      setFormData(emptyForm);
-
-      (e.target as HTMLFormElement).reset();
-      firstInputRef.current?.focus();
-
-    } catch (err: any) {
-
-      console.error("Submission failed:", err);
-
+      return await response.json();
     }
+
+    toast.promise(
+      sendForm(), {
+      pending: 'Sending message...',
+      success: 'Message sent!',
+      error: {
+        render({ data }) {
+          return `Failed to send: ${data || 'unknown error'}`;
+        }
+      }
+    }
+    ).then(() => {
+      setFormData(emptyForm)
+    }).finally(() => {
+      setIsSubmitting(false);
+    })
   };
 
   return (
     <section id="Contact" className="w-full md:h-[calc(100vh-6rem)]">
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
       <div className="flex flex-col pt-10 pb-15 relative 2xl:px-80" id="Contact">
         <h2 className="text-(--red) text-4xl pb-6 md:ml-20">[CONTACT]</h2>
         <p className="md:ml-20 md:w-100">I’m always open to opportunities, be it freelance, contract, or cool projects so reach out!</p>
@@ -120,6 +129,7 @@ export default function Contact() {
             type="submit"
             className={`bg-(--red) amulya-bolditalic text-white text-lg ml-auto my-4 p-0.5`}
             value="SEND MESSAGE"
+            disabled={isSubmitting}
           />
         </form>
       </div>
