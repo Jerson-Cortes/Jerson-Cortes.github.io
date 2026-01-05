@@ -8,7 +8,7 @@ export default function Contact() {
   const emptyForm = { name: '', email: '', subject: '', message: '' };
   const [formData, setFormData] = useState(emptyForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const apiUrl = process.env.API_URL;
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   if (!apiUrl) {
     throw new Error('API_URL environment variable is missing');
   }
