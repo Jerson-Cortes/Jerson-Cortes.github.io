@@ -88,6 +88,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    env:
+        API_URL: ${{ vars.API_URL }}
     runs-on: ubuntu-latest
     needs: build
     steps:
